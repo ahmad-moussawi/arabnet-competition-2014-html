@@ -1,140 +1,156 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
+<!DOCTYPE html>
+<html lang="en" ng-app="arabnet-competition">    
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all structures, getting html, images, and other files from the server to your computer. Links are rebuiltrelatively so that you can freely browse to the local site (works with any browser). You can mirror several sites together so that you can jump from one toanother. You can, also, update an existing mirror site, or resume an interrupted download. The robot is fully configurable, with an integrated help" />
-	<meta name="keywords" content="httrack, HTTRACK, HTTrack, winhttrack, WINHTTRACK, WinHTTrack, offline browser, web mirror utility, aspirateur web, surf offline, web capture, www mirror utility, browse offline, local  site builder, website mirroring, aspirateur www, internet grabber, capture de site web, internet tool, hors connexion, unix, dos, windows 95, windows 98, solaris, ibm580, AIX 4.0, HTS, HTGet, web aspirator, web aspirateur, libre, GPL, GNU, free software" />
-	<title>List of available projects - HTTrack Website Copier</title>
-	<!-- Mirror and index made by HTTrack Website Copier/3.48-3 [XR&CO'2013] -->
+        <meta charset="utf-8">
+        <title>arabnet</title>
 
-	<style type="text/css">
-	<!--
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
+        <link rel="shortcut icon" href="favicon.ico">
+        <link href="favicon.ico" rel="SHORTCUT ICON" type="image/ico">
 
-body {
-	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 8px;
-	background: #77b;
-}
-body, td {
-	font: 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	}
+        <!-- Fonts START -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+        <!-- Fonts END -->
 
-#subTitle {
-	background: #000;  color: #fff;  padding: 4px;  font-weight: bold; 
-	}
+		<link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/global/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+		<link href="assets/global/css/components.css" rel="stylesheet" type="text/css" />
+		<link href="assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="assets/global/css/ng-animation.css" rel="stylesheet" type="text/css" />
+		<link href="assets/frontend/layout/css/style.css" rel="stylesheet" type="text/css" />
+		<link href="assets/frontend/layout/css/style-responsive.css" rel="stylesheet" type="text/css" />
+		<link href="assets/frontend/layout/css/custom.css" rel="stylesheet" type="text/css" />
+		<link href="assets/main.css" rel="stylesheet" type="text/css" />
+		<link href="assets/c3.css" rel="stylesheet" type="text/css" />
+        
 
-#siteNavigation a, #siteNavigation .current {
-	font-weight: bold;  color: #448;
-	}
-#siteNavigation a:link    { text-decoration: none; }
-#siteNavigation a:visited { text-decoration: none; }
+        <!--SoundCloud-->
+        <script src="//connect.soundcloud.com/sdk.js"></script>
+        <script src="//w.soundcloud.com/player/api.js"></script>
 
-#siteNavigation .current { background-color: #ccd; }
-
-#siteNavigation a:hover   { text-decoration: none;  background-color: #fff;  color: #000; }
-#siteNavigation a:active  { text-decoration: none;  background-color: #ccc; }
-
-
-a:link    { text-decoration: underline;  color: #00f; }
-a:visited { text-decoration: underline;  color: #000; }
-a:hover   { text-decoration: underline;  color: #c00; }
-a:active  { text-decoration: underline; }
-
-#pageContent {
-	clear: both;
-	border-bottom: 6px solid #000;
-	padding: 10px;  padding-top: 20px;
-	line-height: 1.65em;
-	background-image: url(backblue.gif);
-	background-repeat: no-repeat;
-	background-position: top right;
-	}
-
-#pageContent, #siteNavigation {
-	background-color: #ccd;
-	}
+        <script>
+            SC.initialize({
+                client_id: "83c989417e9584185c116a9b15fb18b3",
+                redirect_uri: "http://arabnet-competition.com/sc_callback.html",
+            });
+        </script>
 
 
-.imgLeft  { float: left;   margin-right: 10px;  margin-bottom: 10px; }
-.imgRight { float: right;  margin-left: 10px;   margin-bottom: 10px; }
 
-hr { height: 1px;  color: #000;  background-color: #000;  margin-bottom: 15px; }
+    </head>
+    <!-- Head END -->
 
-h1 { margin: 0;  font-weight: bold;  font-size: 2em; }
-h2 { margin: 0;  font-weight: bold;  font-size: 1.6em; }
-h3 { margin: 0;  font-weight: bold;  font-size: 1.3em; }
-h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
+    <!-- Body BEGIN -->
+    <body class="corporate">
 
-.blak { background-color: #000; }
-.hide { display: none; }
-.tableWidth { min-width: 400px; }
+        <!--         Deezer  
+                <div id="dz-root"></div>
+                <script src="http://cdn-files.deezer.com/js/min/dz.js"></script>
+                <script>
+                    DZ.init({
+                        appId: '016e9124c0e7a69e1d6a051d0bdfed7f',
+                        channelUrl: 'http://arabnet-competition.com/channel/deezer'
+                    });
+                </script>-->
 
-.tblRegular       { border-collapse: collapse; }
-.tblRegular td    { padding: 6px;  background-image: url(fade.gif);  border: 2px solid #99c; }
-.tblHeaderColor, .tblHeaderColor td { background: #99c; }
-.tblNoBorder td   { border: 0; }
+        <!-- BEGIN HEADER -->
+        <div class="header">
+            <div class="container">
+                <a class="site-logo" href="index-2.html"><img height="30" src="assets/img/arabnet.png" alt="Metronic FrontEnd"></a>
 
+                <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
 
-// -->
-</style>
+                <!-- BEGIN NAVIGATION -->
+                <div class="header-navigation pull-right font-transform-inherit">
+                    <ul>
+                        <li><a href="#/round1">Round 1</a></li>
+                        <li><a href="#/round2">Round 2</a></li>
+                        <li><a href="#/round3">Round 3</a></li>
+                        <li><a href="#/soundcloud">Sound Clound</a></li>
+                        <li><a href="#/deezer">Deezer</a></li>
+                    </ul>
+                </div>
+                <!-- END NAVIGATION -->
+            </div>
+        </div>
+        <!-- Header END -->
 
-</head>
+        <div class="main">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="index-2.html">Home</a></li>
+                    <li class="active">Arabnet Competition</li>
+                </ul>
+                <!-- BEGIN SIDEBAR & CONTENT -->
+                <div class="row margin-bottom-40" ng-view>
 
-<body>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="3" class="tableWidth">
-	<tr>
-	<td id="subTitle">HTTrack Website Copier - Open Source offline browser</td>
-	</tr>
-</table>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="0" class="tableWidth">
-<tr class="blak">
-<td>
-	<table width="100%" border="0" align="center" cellspacing="1" cellpadding="0">
-	<tr>
-	<td colspan="6"> 
-		<table width="100%" border="0" align="center" cellspacing="0" cellpadding="10">
-		<tr> 
-		<td id="pageContent"> 
-<!-- ==================== End prologue ==================== -->
+                </div>
+                <!-- END SIDEBAR & CONTENT -->
+            </div>
+        </div>
 
+        <!-- BEGIN PRE-FOOTER -->
+                <!-- END PRE-FOOTER -->
 
-<h1 ALIGN=Center>Index of locally available projects:</H1>
-  <table border="0" width="100%" cellspacing="1" cellpadding="0">
-		<TH>
-		<BR/>
-			No categories
-		</TH>
-		<TR>
-		  <TD BACKGROUND="fade.gif">
-                    &middot; <A HREF="arabnet-competition/index.html">arabnet-competition</A>
-   		  </TD>
-		</TR>
-	</TABLE>
-	<BR>
-	<H6 ALIGN="RIGHT">
-         <I>Mirror and index made by HTTrack Website Copier [XR&CO'2008]</I>
-	</H6>
-	<!-- Mirror and index made by HTTrack Website Copier/3.48-3 [XR&CO'2013] -->
-	<!-- Thanks for using HTTrack Website Copier! -->
+        <!-- BEGIN FOOTER -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <!-- BEGIN COPYRIGHT -->
+                    <div class="col-md-6 col-sm-6 padding-top-10">
+                        © ahmad@arabnet2
+                    </div>
+                    <!-- END COPYRIGHT -->
+                    <!-- BEGIN PAYMENTS -->
+                    <div class="col-md-6 col-sm-6">
+                        <!--                        <ul class="social-footer list-unstyled list-inline pull-right">
+                                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-github"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-dropbox"></i></a></li>
+                                                </ul>  -->
+                    </div>
+                    <!-- END PAYMENTS -->
+                </div>
+            </div>
+        </div>
+        <!-- END FOOTER -->
 
-<!-- ==================== Start epilogue ==================== -->
-		</td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-</td>
-</tr>
-</table>
+                    <script src="assets/global/plugins/jquery-1.11.0.min.js"></script>
+                    <script src="assets/global/plugins/jquery-migrate-1.2.1.min.js"></script>
+                    <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+                    <script src="assets/frontend/layout/scripts/back-to-top.js"></script>
+                    <script src="assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+                    <script src="assets/frontend/layout/scripts/layout.js"></script>
+                    <script src="assets/angular/angular.min.js"></script>
+                    <script src="assets/angular/angular-animate.js"></script>
+                    <script src="assets/angular/angular-route.js"></script>
+                    <script src="assets/main.js"></script>
+                    <script src="assets/c3.js"></script>
+                    <script src="assets/dropzone/dropzone.js"></script>
+                    <script src="app/app.js"></script>
+                    <script src="app/controllers.js"></script>
+                    <script src="app/directives.js"></script>
+                    <script src="app/services.js"></script>
+                    <script src="app/filters.js"></script>
+					<script src="http://www.bluenotesentertainment.com/siteelements/iweb-demos/backstretch/backstretch/js/jquery.backstretch.js"></script>
 
-<table width="76%" border="0" align="center" valign="bottom" cellspacing="0" cellpadding="0">
-	<tr>
-	<td id="footer"><small>&copy; 2008 Xavier Roche & other contributors - Web Design: Leto Kauler.</small></td>
-	</tr>
-</table>
-
-</body>
-
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                Layout.init();
+                Layout.initTwitter();
+            });
+        </script>
+        <!-- END PAGE LEVEL JAVASCRIPTS -->
+    </body>
+    <!-- END BODY -->
 </html>
-
-
