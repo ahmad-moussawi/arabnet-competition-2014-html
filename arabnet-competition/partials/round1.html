@@ -1,0 +1,146 @@
+<!-- BEGIN CONTENT -->
+<div class="col-md-12 col-sm-12">
+    <h1>Round 1 - ShopPer</h1>
+    <div class="content-page">
+        <div class="note note-success">
+            <h4 class="block">ShopPer Cart</h4>
+            <p>Additional feature: interactive suggestions to help user get discounts see <i style="font-size:30px;" class="fa fa-level-down"></i></p>
+        </div>   
+
+        <div class="note note-warning">
+            <div class="animate slide-right" ng-if="getBooks() == 1"><i class="fa fa-book"></i> Hey get 1 another book and get 20% discount !</div>
+            <div class="animate slide-left"  ng-if="getElectronics() > 0 && getClothing() == 0"><i class="fa fa-book"></i> Why not getting Levi’s Jeans and get 10% discount !</div>
+            <div class="animate slide-left"  ng-if="getClothing() > 0 && getElectronics() == 0"><i class="fa fa-tablet"></i> Why not getting Nexus Tablet and get 10% discount !</div>
+            <div class="animate slide-left"  ng-if="getClothing() == 0 && getElectronics() == 0">Hey, we have an awesome offer for you !, get any clothing with any electronics and get a 10% discount</div>
+            <div class="animate slide-right" ng-if="total() < 70 && total() != 0"><i class="fa fa-truck"></i> Still need ${{70 - total()}} and get free shipping !</div>
+            <div class="animate slide-right" ng-if="total() < 70"><i class="fa fa-truck"></i> Buy for 70$ and get free shipping !</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <!-- BEGIN GENERAL PORTLET-->
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i>Select you product
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+
+                            <div class="products">
+                                <div class="product clearfix" ng-repeat="product in products">
+                                    <h3>{{product.title}}</h3>
+                                    <p>{{product.category}}</p>
+
+                                    <strong class="pull-right">{{product.price| currency}}</strong>
+
+                                    <p class="btn-group">
+                                        <button ng-click="add(product)" ng-disabled="getqty(product) == 5" class="btn green"> 
+                                            <span ng-show="incart(product)">I need another one ({{5 - getqty(product)}} more)</span>
+                                            <span ng-show="!incart(product)">Add to cart</span>
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div>
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-shopping-cart"></i> Checkout Cart
+                            </div>
+                        </div>
+                        <div class="portlet-body" ng-show="cart.length > 0">
+                            <div class="cart">
+                                <table class="table">
+                                    <tr>
+                                        <th width="50%">
+                                            Item
+                                        </th>
+                                        <th width="10%">Qty</th>
+                                        <th width="40%">Price</th>
+                                        <th></th>
+                                    </tr>
+                                </table>
+                                <div class="item animate bouncy-scale-in" ng-repeat="item in cart">
+                                    <table class="table" style="margin-bottom:0">
+                                        <tr>
+                                            <td width="50%">
+                                                <h3>{{item.title}}</h3>
+                                                <p class="muted">{{item.category}}</p>
+                                            </td>
+                                            <td width="10%"><input min="1" max="5" type="number" ng-model="item.qty" style="display:inline!important;width:40px;" class="form-control-static" /> </td>
+                                            <td width="40%"><strong>{{item.price| currency}}</strong></td>
+                                            <th><button class="btn btn-danger" ng-click="remove(item)">Remove</button></th>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <table class="table">
+                                    <tfoot>
+                                        <tr>
+                                            <th width="50%">
+                                                Sub Total
+                                            </th>
+                                            <th width="10%"></th>
+                                            <th width="40%"><strong>{{total() | currency}}</strong></th>
+                                        </tr>
+                                        <tr ng-show="getBooks() > 1">
+                                            <th width="50%">
+                                                Discount 20% (2 books)
+                                            </th>
+                                            <th width="10%"></th>
+                                            <th width="40%"><strong>-{{(total() * .2) | currency}}</strong></th>
+                                        </tr>
+                                        <tr ng-show="getElectronics() > 0 && getClothing() > 0">
+                                            <th width="50%">
+                                                Discount 10% (Clothing and electronics)
+                                            </th>
+                                            <th width="10%"></th>
+                                            <th width="40%"><strong>-{{(total() * .1) | currency}}</strong></th>
+                                        </tr>
+                                        <tr>
+                                            <th width="50%">
+                                                Shipping
+                                            </th>
+                                            <th width="10%"></th>
+                                            <th width="40%">
+                                                <strong ng-show="total2() <= 70">10$</strong>
+                                                <strong ng-show="total2() > 70" style="background: red;color:#fff;">Free shipping</strong>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th width="50%">
+                                                Total
+                                            </th>
+                                            <th width="10%"></th>
+                                            <th width="40%"><strong style="font-size: 40px">{{total2() | currency}}</strong></th>
+                                        </tr>
+                                    </tfoot>
+                                </table> 
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="portlet-body" ng-show="!cart.length">
+                            <p class="well-large no-item" style="text-align:center;font-size:45px;">Hey!, Am waiting to select your items !</p>
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- END CONTENT -->
