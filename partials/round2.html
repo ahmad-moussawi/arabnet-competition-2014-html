@@ -1,0 +1,128 @@
+<style>
+    .footer{display:none;}
+    .header{opacity:.8;height:62px;display:none;}
+    .breadcrumb{display:none}
+    .btn.search{
+        margin-top: 60px;
+        font-size: 30px;
+        padding: 10px 40px;
+
+    }
+
+    .main-container{
+        padding-top: 150px;
+    }
+
+    .header-navigation{display:none!important;}
+
+    #supersized-loader{display:none}
+
+    .search-box{font-size: 25px;}
+
+    .track-info{
+        font-size: 15px;
+        color: #fff;
+        background: rgba(0,0,0,.8);
+        padding: 10px;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+    }
+</style>
+
+<!--Demo styles (you can delete this block)-->
+
+<!--<ul id="demo-block">
+    <li><a href="http://buildinternet.com/project/supersized/" target="_blank"><img src="img/supersized-logo.png"/></a></li>
+    <li>Photographers: <a href="http://cargocollective.com/mariakazvan" target="_blank">Maria Kazvan</a>, <a href="http://colindub.com" target="_blank">Colin Wojno</a>, &amp; <a href="http://brookeshaden.com/" target="_blank">Brooke Shaden</a></li>
+</ul>-->
+
+<!--End of styles-->
+
+<!--Thumbnail Navigation-->
+<!--<div id="prevthumb"></div>
+<div id="nextthumb"></div>-->
+
+<!--Arrow Navigation-->
+<!--<a id="prevslide" class="load-item"></a>
+<a id="nextslide" class="load-item"></a>-->
+
+<!--<div id="thumb-tray" class="load-item">
+    <div id="thumb-back"></div>
+    <div id="thumb-forward"></div>
+</div>-->
+
+<!--Time Bar-->
+<!--<div id="progress-back" class="load-item">
+    <div id="progress-bar"></div>
+</div>-->
+
+<!--Control Bar-->
+<div ng-hide="true" id="controls-wrapper" class="load-item">
+    <div id="controls">
+
+        <a id="play-button"><img id="pauseplay" src="img/pause.png"/></a>
+
+        <!--Slide counter-->
+        <div id="slidecounter">
+            <span class="slidenumber"></span> / <span class="totalslides"></span>
+        </div>
+
+        <!--Slide captions displayed here-->
+        <div id="slidecaption"></div>
+
+        <!--Thumb Tray button-->
+        <a id="tray-button"><img id="tray-arrow" src="img/button-tray-up.png"/></a>
+
+        <!--Navigation-->
+        <ul id="slide-list"></ul>
+
+    </div>
+</div>
+
+
+<!-- BEGIN CONTENT -->
+<div class="col-md-12 col-sm-12">
+    <!--<h1>MyMood</h1>-->
+    <div class="main-container">
+        <!--        <div class="note note-success">
+                    <h4 class="block">MyMood</h4>
+        
+                </div>              -->
+
+
+        <form  name="form" class="search-wrapper animate bouncy-slide-down" ng-show="show" ng-submit="search(term)" ng-style="formStyle">
+            <h1 style="color:#fff;">Enter you favorite artist or song ...</h1>
+            <input type="text" placeholder="Yanni vertigo ..." ng-model="term" class="search-box" />
+            <button type="submit" class=" search btn btn-primary" ng-disabled="searching">{{searching?'Searching with ♥':'Search'}}</button>
+
+            <div ng-show="playlists[0].tracks.length">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="ahmadmuzavi" data-size="large">Tweet</a>
+                <script>!function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location)?'http':'https'; if (!d.getElementById(id)){js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); }}(document, 'script', 'twitter-wjs');</script>
+            </div>
+        </form>
+
+        <div ng-show="searching">
+            <div class="spinner"></div>
+            <center>Fetching data .... </center>
+        </div>
+
+        <div ng-repeat="playlist in playlists|  limitTo:1" class="row">
+            <!--            <div class="col-md-4">
+                            <img ng-src="{{playlist.artwork_url}}" class="img-thumbnail" />
+                        </div>-->
+            <div class="track-info">
+                <h2>{{playlist.title}}</h2>
+                <p>{{playlist.release_year}}</p>
+            </div>
+
+            <div class="col-md-12 animate flip-in" ng-repeat="track in playlist.tracks| limitTo:1">
+                <div ng-style="{width:'70 % ', margin:'0 auto', height:'200px'}" data-sc data-track-url="{{track.permalink_url}}"></div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- END CONTENT -->

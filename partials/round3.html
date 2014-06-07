@@ -1,0 +1,70 @@
+<!-- BEGIN CONTENT -->
+<style>
+    .crate{border-bottom:1px solid #eee; margin-bottom:10px;}
+    .box{
+        
+    }
+</style>
+
+<div class="col-md-12 col-sm-12">
+    <h1>Round 3</h1>
+    <div class="content-page">
+        <div class="note note-success">
+            <h4 class="block">Metronic Admin (Framework) Features</h4>
+        </div>              
+
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <!-- BEGIN GENERAL PORTLET-->
+                    <div class="portlet">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i>General
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+
+                            <div class="crate">
+                                15,
+                                10
+                            </div>
+
+                            <div class="crate">
+                                13,
+                                11,
+                                1
+                            </div>
+
+                            <div class="crate">
+                                9,
+                                8
+                                ,4
+                                ,2
+                                2
+                            </div> 
+
+
+                            <div class="form-group">
+                                <label>Enter boxes</label>
+                                <input type="text" class="form-control" ng-model="boxes" placeholder="Enter your boxes" />
+                            </div>
+
+                            <button ng-click="calculate()">Calculate</button>
+
+
+                            <div class="crate" ng-repeat="crate in crates track by $index">
+                                <div class="box" ng-repeat="b in crate.boxes track by $index">{{b}}</div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- END CONTENT -->
